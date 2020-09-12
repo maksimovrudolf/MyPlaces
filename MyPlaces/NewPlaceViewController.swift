@@ -9,7 +9,6 @@
 import UIKit
 
 class NewPlaceViewController: UITableViewController {
-    var newPlace: Place?
     var imageIsChanged = false
 
     @IBOutlet weak var placeImage: UIImageView!
@@ -23,9 +22,7 @@ class NewPlaceViewController: UITableViewController {
         
         // Убираем лишние линии
         tableView.tableFooterView = UIView()
-        
         saveButton.isEnabled = false
-        
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
 
@@ -72,8 +69,11 @@ class NewPlaceViewController: UITableViewController {
         } else {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
+
+        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: image?.pngData())
         
-        newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, image: image, restaurantImage: nil)
+        StorageManager.saveObject(newPlace)
+        
     }
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
