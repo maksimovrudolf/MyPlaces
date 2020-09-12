@@ -67,6 +67,7 @@
                                     <outlet property="locationLabel" destination="wBK-f3-pM4" id="olq-IW-TKB"/>
                                     <outlet property="nameLabel" destination="g02-dA-ejH" id="ZEL-X4-xSl"/>
                                     <outlet property="typeLabel" destination="UEw-gk-MC3" id="FiJ-Jc-jjk"/>
+                                    <segue destination="Y6k-fc-gxW" kind="show" identifier="showDetail" id="pdw-ZK-D0L"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -75,7 +76,7 @@
                             <outlet property="delegate" destination="mi3-6V-Wrw" id="fVn-HK-T2k"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Places" id="X3x-G9-quJ">
+                    <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="X3x-G9-quJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RlR-6K-qui">
                             <connections>
                                 <segue destination="5mB-fP-wDp" kind="presentation" id="5Q4-3P-5md"/>
@@ -92,7 +93,7 @@
             <objects>
                 <tableViewController id="Y6k-fc-gxW" customClass="NewPlaceViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="adH-g2-qRy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
@@ -232,7 +233,7 @@
                             <outlet property="delegate" destination="Y6k-fc-gxW" id="QwH-VQ-wms"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Place" id="if3-DS-IxY">
+                    <navigationItem key="navigationItem" title="New Place" largeTitleDisplayMode="always" id="if3-DS-IxY">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="t6v-U5-p6r">
                             <connections>
                                 <action selector="cancelAction:" destination="Y6k-fc-gxW" id="rcb-iE-kXr"/>
@@ -261,8 +262,8 @@
         <scene sceneID="Py0-mR-Mgc">
             <objects>
                 <navigationController id="zte-Bc-O5e" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mgX-BR-ZnZ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mgX-BR-ZnZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
@@ -295,6 +296,9 @@
             <point key="canvasLocation" x="2056.521739130435" y="-395.08928571428572"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pdw-ZK-D0L"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Photo" width="195" height="196"/>
     </resources>
